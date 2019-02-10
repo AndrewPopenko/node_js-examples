@@ -1,3 +1,5 @@
+// very simple express server
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -5,11 +7,15 @@ var bodyParser = require('body-parser');
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+// use render engine
 app.set('view engine', 'ejs');
+// static elemments
 app.use('/public', express.static('public'));
 app.listen('58011');
 
 console.log("start server on port 58011");
+
+// routing
 
 // POST /login gets urlencoded bodies
 app.post('/about_us', urlencodedParser, function (req, res) {
