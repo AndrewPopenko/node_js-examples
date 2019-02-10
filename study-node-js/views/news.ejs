@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>News ID <%= newsID%></title>
+  </head>
+  <body>
+    <p>News ID is <%= newsID %></p>
+    <%- include('blocks/headers.ejs') %>
+    <p>myParam is <%= myParam %></p>
+    <p>name <%= myObj.name %> and ocupation is <%= myObj.ocupation %></p>
+    <ul>
+      <% myObj.skills.forEach(function(item) { %>
+      <li><%= item %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
